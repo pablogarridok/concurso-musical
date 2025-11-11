@@ -11,26 +11,43 @@
 <script setup lang="ts"></script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
 .navbar {
-  background: #4c4fff;
-  padding: 12px 20px;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  padding: 18px 28px;
+  background: rgba(20, 18, 34, 0.65);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(124, 92, 252, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-family: 'Inter', sans-serif;
 }
 
 .navbar ul {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  gap: 35px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .navbar a {
-  color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #e9e9f1;
+  transition:
+    color 0.2s ease,
+    text-shadow 0.3s ease;
 }
 
 .navbar a:hover {
-  text-decoration: underline;
+  color: #a996e4;
+  text-shadow: 0 0 15px rgba(255, 0, 149, 0.6);
 }
 </style>
