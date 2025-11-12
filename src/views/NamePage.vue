@@ -1,11 +1,9 @@
-
 <template>
   <div>
-    <NameCard/>
+    <NameCard />
   </div>
 </template>
 
 <script setup>
-import NameCard from "../components/NombreUsuario.vue"
+import NameCard from '../components/NombreUsuario.vue'
 </script>
-

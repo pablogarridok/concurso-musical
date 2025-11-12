@@ -10,7 +10,7 @@
       </p>
 
       <div id="buttons">
-        <button class="btn-play">¡Jugar!</button>
+        <button @click="irANombre" class="btn-play">¡Jugar!</button>
         <button class="btn-ranking">Ver Ranking</button>
       </div>
     </div>
@@ -30,7 +30,13 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRouter } from 'vue-router'
+const router = useRouter()
+function irANombre() {
+  router.push('/name')
+}
+</script>
 
 <style scoped>
 .landing {
