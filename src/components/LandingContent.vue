@@ -10,7 +10,7 @@
       </p>
 
       <div id="buttons">
-        <button @click="irANombre" class="btn-play">¡Jugar!</button>
+        <button @click="empezarJuego" class="btn-play">¡Jugar!</button>
         <button class="btn-ranking">Ver Ranking</button>
       </div>
     </div>
@@ -25,16 +25,25 @@
     <div id="empezar">
       <p>¿Listo para afrontar el desafio?</p>
       <p>Demuestra que eres un experto en la semicorchea y alcanza el top mundial</p>
-      <button class="btn-play2">Empezar Ahora!!</button>
+      <button class="btn-play2" @click="empezarJuego">Empezar Ahora!!</button>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+import {useUserStore} from "../stores/userStore"
+
 const router = useRouter()
-function irANombre() {
-  router.push('/name')
+const userStore = useUserStore();
+
+function empezarJuego() {
+  if (userStore.nombre.trim() === ""){
+      router.push("/name")
+    }
+    else {
+      router.push("/game")
+    }
 }
 </script>
 

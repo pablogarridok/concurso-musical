@@ -1,14 +1,34 @@
 <template>
   <nav class="navbar">
     <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Jugar</a></li>
+      <li><a href="#" @click="irAInicio">Inicio</a></li>
+      <li><a href="#" @click="irAJugar">Jugar</a></li>
       <li><a href="#">Ranking</a></li>
     </ul>
   </nav>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRouter } from 'vue-router'
+import { useUserStore } from '../stores/userStore'
+
+const router = useRouter()
+const userStore =useUserStore()
+
+
+  function irAInicio(){
+    router.push("/")
+  }
+
+  function irAJugar(){
+    if (userStore.nombre.trim() === ""){
+      router.push("/name")
+    }
+    else {
+      router.push("/game")
+    }
+  }
+</script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
@@ -48,6 +68,6 @@
 
 .navbar a:hover {
   color: #a996e4;
-  text-shadow: 0 0 15px rgba(255, 0, 149, 0.6);
+  text-shadow: 0 0 15px rgba(55, 0, 255, 0.6);
 }
 </style>

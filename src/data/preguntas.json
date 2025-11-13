@@ -1,0 +1,102 @@
+[
+  {
+    "cancion": "/canciones/LoveSosa_ChiefKeef.mp3",
+    "respuestas": ["Love Sosa-Chief Keef", "Goosebumps-Travis Scott", "Magnolia-Playboi Carti", "Mask Off-Future"],
+    "correcta": "Love Sosa-Chief Keef"
+  },
+  {
+    "cancion": "/canciones/Freemolly_YungBeef.mp3",
+    "respuestas": ["El Papasito Bars-Yung Beef", "Cheb Marlboro-Khaled", "#Freemolly (Intro)-Yung Beef", "Beef Boy-Yung Beef"],
+    "correcta": "#Freemolly (Intro)-Yung Beef"
+  },
+  {
+    "cancion": "/canciones/Pxxrin-PxxrGvng.mp3",
+    "respuestas": ["Cigala-Pxxr Gvng", "Pxxrin-Pxxr Gvng", "Los Foreign-Los Yumas", "Maldades-La Mafia Del Amor"],
+    "correcta": "Pxxrin-Pxxr Gvng"
+  },
+  {
+    "cancion": "/canciones/Motriles-MarkoItalia.mp3",
+    "respuestas": ["Front Row-Yung Beef", "Dinero de la Ola-Yung Beef", "Marko Italia-Nacer Pobre Morir Rico", "Motriles-Marko Italia, Yung Beef"],
+    "correcta": "Motriles-Marko Italia, Yung Beef"
+  },
+  {
+    "cancion": "/canciones/Solo-StickyM.A.mp3",
+    "respuestas": ["Shooters-Sticky M.A.", "Diablo-Sticky M.A.", "Solo-Sticky M.A.", "Normal-Sticky M.A., Polimá Westcoast"],
+    "correcta": "Solo-Sticky M.A."
+  },
+  {
+    "cancion": "/canciones/T4Barajas_Diego900.mp3",
+    "respuestas": ["T4 Barajas-Diego 900", "De la Forma En Que Yo Quiero-L'haine", "Tráfico-Diego 900", "Habibi-Abhir"],
+    "correcta": "T4 Barajas-Diego 900"
+  },
+  {
+    "cancion": "/canciones/KIM-L'haine.mp3",
+    "respuestas": ["Cangrejos-L'haine", "130 freestyle-L'haine", "KIM-L'haine", "Comodines-L'haine"],
+    "correcta": "KIM-L'haine"
+  },
+  {
+    "cancion": "/canciones/33Saffire_CTDS.mp3",
+    "respuestas": ["33SAFFIRE-Shynelevell, Gloosito", "DINERONOFACIL-Gloosito, JayDime, N3iz4n, Shynelevell ", "GunsAkimbo-Gloosito, JayDime", "No Lol Zone-Gloosito"],
+    "correcta": "33SAFFIRE-Shynelevell, Gloosito"
+  },
+  {
+    "cancion": "/canciones/Hamburguesas_CarolinaDurante.mp3",
+    "respuestas": ["Hamburguesas-Carolina Durante", "Infancia Mal Calibrada-Barry B", "Es una pena-San Tosielo", "La Vida Cañón-Alcalá Norte-"],
+    "correcta": "Hamburguesas-Carolina Durante"
+  },
+  {
+    "cancion": "/canciones/FamilyMart_Rojuu.mp3",
+    "respuestas": ["Family Mart-Rojuu", "Lucky-Rojuu", "Luna De Diseño-Rojuu", "La Marcha De Los Monstruos-Rojuu, MDA"],
+    "correcta": "Family Mart-Rojuu"
+  },
+  {
+    "cancion": "/canciones/96ERS_Hoke.mp3",
+    "respuestas": ["96ERS-Hoke", "Medallones-Hoke", "Five O-Hoke", "Santo-Hoke"],
+    "correcta": "96ERS-Hoke"
+  },
+  {
+    "cancion": "/canciones/Valkyrie_BenyJR.mp3",
+    "respuestas": ["BMO033-Beny JR", "Valkyrie-Beny JR", "Combo la L-Beny jr", "Color Caramelo-Beny JR"],
+    "correcta": "Valkyrie-Beny JR"
+  },
+  {
+    "cancion": "/canciones/SpanishJiggaFreestyle_C.Tangana.mp3.mp3",
+    "respuestas": ["Still Rapping-C. Tangana", "Pussy Call-C. Tangana", "Spanish Jigga Freestyle-C. Tangana", "Cabernet Sauvignon-C. Tangana"],
+    "correcta": "Spanish Jigga Freestyle-C. Tangana"
+  },
+  {
+    "cancion": "/canciones/YaSabes_Agorazein.mp3",
+    "respuestas": ["Ya Sabes-Agorazein", "Humo y Alcohol-Sticky M.A., C. Tangana. Jerv.AGZ", "Huele a Nuevo-C. Tangana, Sticky M.A.", "To Pue' Ser-Agorazein"],
+    "correcta": "Ya Sabes-Agorazein"
+  },
+  {
+    "cancion": "/canciones/Orale_Ebano.mp3",
+    "respuestas": ["Órale-Ébano", "Todo Bien-Ébano", "Face ID-Ébano", "Follow Mix-Ébano"],
+    "correcta": "Órale-Ébano"
+  },
+  {
+    "cancion": "/canciones/MulaJuice_Mda.mp3",
+    "respuestas": ["Mula Juice-Baby Pantera, MDA", "Mozart-MDA", "Jake Long-MDA", "Lazy Boy-MDA"],
+    "correcta": "Mula Juice-Baby Pantera, MDA"
+  },
+  {
+    "cancion": "/canciones/aaa.mp3",
+    "respuestas": ["Cangrejos-L'haine", "130 freestyle-L'haine", "KIM-L'haine", "Comodines-L'haine"],
+    "correcta": "KIM-L'haine"
+  },
+  {
+    "cancion": "/canciones/aaa.mp3",
+    "respuestas": ["33SAFFIRE-Shynelevell, Gloosito", "DINERONOFACIL-Gloosito, JayDime, N3iz4n, Shynelevell ", "GunsAkimbo-Gloosito, JayDime", "No Lol Zone-Gloosito"],
+    "correcta": "33SAFFIRE-Shynelevell, Gloosito"
+  },
+  {
+    "cancion": "/canciones/aaa.mp3",
+    "respuestas": ["Hamburguesas-Carolina Durante", "Barry B-Infancio Mal Calibrada", "San Tosielo-Es una pena", "Alcalá Norte-La Vida Cañón"],
+    "correcta": "Hamburguesas-Carolina Durante"
+  },
+  {
+    "cancion": "/canciones/aaa.mp3",
+    "respuestas": ["Hamburguesas-Carolina Durante", "Barry B-Infancio Mal Calibrada", "San Tosielo-Es una pena", "Alcalá Norte-La Vida Cañón"],
+    "correcta": "Hamburguesas-Carolina Durante"
+  }
+]
