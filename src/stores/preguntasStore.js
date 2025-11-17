@@ -7,5 +7,8 @@ export const usePreguntasStore = defineStore('pregunta', () => {
   function incrementarIndice() {
     indice.value++
   }
-  return { indice, incrementarIndice }
+  function resetIndice() {
+    indice.value = 0
+  }
+  return { indice, incrementarIndice, resetIndice }
 })

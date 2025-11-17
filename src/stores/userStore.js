@@ -12,5 +12,5 @@ export const useUserStore = defineStore('user', () => {
   function actualizarPuntuacion(puntos) {
     puntuacionTotal.value += puntos
   }
-  return { nombre, setNombre }
+  return { nombre, setNombre, actualizarPuntuacion, puntuacionTotal }
 })
