@@ -1,67 +1,64 @@
 <template>
   <div>
-    <button @click="cargarCanciones">PLAY</button>
-    <p>{{ mensaje }}</p>
+    <button @click="botonPlay">PLAY</button>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
-import { useUserStore } from '@/stores/userStore'
 import { usePreguntasStore } from '@/stores/preguntasStore'
 import { Howl } from 'howler'
 
-const userStore = useUserStore()
 const preguntasStore = usePreguntasStore()
-
-interface Cancion {
-  nombre: string
-  url: string
-}
-
-const canciones = ref<Cancion[]>([])
-const cancionActual = ref<Howl | null>(null)
-
-const mensaje = ref('')
-const puntuacion = userStore.puntuacionTotal
+const cancionActual = ref(null)
 
 async function cargarCanciones() {
   try {
-    const response = await fetch('../../data/preguntas.json')
-
-    if (!response.ok) {
-      mensaje.value = 'No se han cargado'
-      throw new Error('No se han podido cargar las canciones')
-    }
-
+    const response = await fetch('/data/preguntas.json')
     const data = await response.json()
-    canciones.value = data.canciones
-    mensaje.value = 'Canciones cargadas'
+
+    console.log('JSON cargado:', data)
+
+    // Guardamos las canciones en el store
+    preguntasStore.canciones = data
+
+    // Mezclar las canciones aleatoriamente
+    preguntasStore.canciones = [...preguntasStore.canciones].sort(() => Math.random() - 0.5)
   } catch (err) {
     console.error(err)
   }
 }
 
-// function asignarCancionActual() {
-//   const cancion = canciones.value[preguntasStore.indice.value]
-//   cancionActual.value = new Howl({
-//     src: [cancion.file],
-//     html5: true,
-//     onend: () => {
-//       preguntasStore.indice.value++
-//     },
-//   })
-// }
+function asignarCancionActual(indice) {
+  const cancion = preguntasStore.canciones[indice]
+  console.log('Asignando canción:', cancion)
 
-// async function botonPlay() {
-//   if (canciones.value.length === 0) await cargarCanciones()
+  if (!cancion) {
+    console.error('No existe canción en ese índice:', indice)
+    return
+  }
 
-//   if (!cancionActual.value) asignarCancionActual()
+  cancionActual.value = new Howl({
+    src: [cancion.file],
+    html5: true,
+    onend: () => {
+      preguntasStore.indice++
+    },
+  })
+}
 
-//   cancionActual.value?.play()
-// }
+async function botonPlay() {
+  // Cargar canciones si no hay
+  if (preguntasStore.canciones.length === 0) {
+    await cargarCanciones()
+  }
 
-
+  // Reproducir la canción actual
+  if (!cancionActual.value) {
+    asignarCancionActual(preguntasStore.indice)
+    cancionActual.value?.play()
+  }
+}
 </script>
 
 <style scoped></style>
