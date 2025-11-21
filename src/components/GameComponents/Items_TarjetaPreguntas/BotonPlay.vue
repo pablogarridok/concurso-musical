@@ -1,6 +1,7 @@
 <template>
   <div>
-    <button @click="botonPlay">PLAY</button>
+    <button @click="cargarCanciones">PLAY</button>
+    <p>{{ mensaje }}</p>
   </div>
 </template>
 
@@ -13,34 +14,54 @@ import { Howl } from 'howler'
 const userStore = useUserStore()
 const preguntasStore = usePreguntasStore()
 
-const canciones = ref<any[]>([])
+interface Cancion {
+  nombre: string
+  url: string
+}
+
+const canciones = ref<Cancion[]>([])
 const cancionActual = ref<Howl | null>(null)
 
+const mensaje = ref('')
+const puntuacion = userStore.puntuacionTotal
+
 async function cargarCanciones() {
-  const response = await fetch('canciones.json')
-  if (!response.ok) throw new Error('No se han podido cargar las canciones')
-  const data = await response.json()
-  canciones.value = data.canciones
+  try {
+    const response = await fetch('../../data/preguntas.json')
+
+    if (!response.ok) {
+      mensaje.value = 'No se han cargado'
+      throw new Error('No se han podido cargar las canciones')
+    }
+
+    const data = await response.json()
+    canciones.value = data.canciones
+    mensaje.value = 'Canciones cargadas'
+  } catch (err) {
+    console.error(err)
+  }
 }
 
-function asignarCancionActual() {
-  const cancion = canciones.value[preguntasStore.indice.value]
-  cancionActual.value = new Howl({
-    src: [cancion.file],
-    html5: true,
-    onend: () => {
-      preguntasStore.indice.value++
-    },
-  })
-}
+// function asignarCancionActual() {
+//   const cancion = canciones.value[preguntasStore.indice.value]
+//   cancionActual.value = new Howl({
+//     src: [cancion.file],
+//     html5: true,
+//     onend: () => {
+//       preguntasStore.indice.value++
+//     },
+//   })
+// }
 
-async function botonPlay() {
-  if (canciones.value.length === 0) await cargarCanciones()
+// async function botonPlay() {
+//   if (canciones.value.length === 0) await cargarCanciones()
 
-  if (!cancionActual.value) asignarCancionActual()
+//   if (!cancionActual.value) asignarCancionActual()
 
-  cancionActual.value?.play()
-}
+//   cancionActual.value?.play()
+// }
+
+
 </script>
 
 <style scoped></style>
