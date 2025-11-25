@@ -15,4 +15,13 @@ if (userStore.nombre.trim() === '') {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+#saludo p {
+  font-size: 1.6rem;
+  color: var(--color-text);
+  margin-top: 80px;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius);
+}
+</style>

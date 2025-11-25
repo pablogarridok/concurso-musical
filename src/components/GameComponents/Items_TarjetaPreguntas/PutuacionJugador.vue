@@ -1,14 +1,18 @@
 <template>
   <div>
-    <h3>Puntuacion: {{ puntuacion }}</h3>
+    <h3>Puntuacion: {{ userStore.puntuacionTotal }}</h3>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useUserStore } from '../../../stores/userStore'
+
 const userStore = useUserStore()
-let puntuacion = ref(userStore.puntuacionTotal)
 </script>
 
-<style scoped></style>
+<style scoped>
+h3 {
+  color: var(--color-accent-light);
+  font-size: 1.2rem;
+}
+</style>
