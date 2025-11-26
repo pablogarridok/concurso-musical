@@ -1,9 +1,8 @@
 <template>
   <div id="feedback">
-
     <div class="icon-section">
       <div class="circle-icon">
-        <p>{{icono}}</p>
+        <p>{{ icono }}</p>
       </div>
     </div>
 
@@ -31,36 +30,39 @@
     <div class="footer-info">
       Respondiste correctamente <b>{{ preguntasCorrectas }}</b> de <b>10</b> preguntas
     </div>
-
+    <div>
+      <button @click="volverAJugar">Volver a jugar</button>
+    </div>
   </div>
 </template>
-
 
 <script setup lang="ts">
 import { useUserStore } from '../../stores/userStore'
 import { ref } from 'vue'
+import router from '@/router'
 
 const userStore = useUserStore()
 let mensaje = ref('')
-let icono =ref('')
+let icono = ref('')
 const puntos = userStore.puntuacionTotal
 
 if (puntos < 40) {
-  mensaje.value = "Admitelo, eres pésimo en esto, dedícate a otra cosa"
-  icono.value = "😭"
-}
-else if (puntos < 70) {
-  mensaje.value = "Bueno... podría haber sido peor"
-  icono.value="😑​"
-}
-else {
-  mensaje.value = "¡Excelente, sabes mucho sobre esto fiera!"
-  icono.value="​😁​"
+  mensaje.value = 'Admitelo, eres pésimo en esto, dedícate a otra cosa'
+  icono.value = '😭'
+} else if (puntos < 70) {
+  mensaje.value = 'Bueno... podría haber sido peor'
+  icono.value = '😑​'
+} else {
+  mensaje.value = '¡Excelente, sabes mucho sobre esto fiera!'
+  icono.value = '​😁​'
 }
 
-const preguntasCorrectas= userStore.preguntasCorrectas
-const precision=userStore.preguntasCorrectas*10;
+const preguntasCorrectas = userStore.preguntasCorrectas
+const precision = userStore.preguntasCorrectas * 10
 
+function volverAJugar() {
+  router.push('/game')
+}
 </script>
 
 <style scoped>
@@ -174,7 +176,30 @@ const precision=userStore.preguntasCorrectas*10;
   padding: 12px;
   border-radius: 12px;
   font-size: 0.95rem;
-   color: #444343;
+  color: #444343;
+}
+/* ===== BOTÓN VOLVER A JUGAR ===== */
+button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px 0;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s ease;
 }
 
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
+}
+
+button:active {
+  transform: scale(0.97);
+}
 </style>

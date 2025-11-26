@@ -101,11 +101,7 @@
   },
   {
     "file": "/canciones/96ERS_Hoke.mp3",
-    "respuestas": [
-      "96ERS-Hoke",
-     "Medallones-Hoke", 
-     "Five O-Hoke", 
-     "Santo-Hoke"],
+    "respuestas": ["96ERS-Hoke", "Medallones-Hoke", "Five O-Hoke", "Santo-Hoke"],
     "correcta": "96ERS-Hoke"
   },
   {
@@ -140,20 +136,12 @@
   },
   {
     "file": "/canciones/Orale_Ebano.mp3",
-    "respuestas": [
-      "Órale-Ébano", 
-      "Todo Bien-Ébano", 
-      "Face ID-Ébano", 
-      "Follow Mix-Ébano"],
+    "respuestas": ["Órale-Ébano", "Todo Bien-Ébano", "Face ID-Ébano", "Follow Mix-Ébano"],
     "correcta": "Órale-Ébano"
   },
   {
     "file": "/canciones/MulaJuice_Mda.mp3",
-    "respuestas": [
-      "Mula Juice-Baby Pantera, MDA", 
-      "Mozart-MDA", 
-      "Jake Long-MDA", 
-      "Lazy Boy-MDA"],
+    "respuestas": ["Mula Juice-Baby Pantera, MDA", "Mozart-MDA", "Jake Long-MDA", "Lazy Boy-MDA"],
     "correcta": "Mula Juice-Baby Pantera, MDA"
   },
   {
