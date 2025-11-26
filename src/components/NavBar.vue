@@ -3,7 +3,7 @@
     <ul>
       <li><a href="#" @click="irAInicio">Inicio</a></li>
       <li><a href="#" @click="irAJugar">Jugar</a></li>
-      <li><a href="#">Ranking</a></li>
+      <li><a href="#" @click="IrARanking">Ranking</a></li>
     </ul>
   </nav>
 </template>
@@ -27,6 +27,10 @@ const userStore =useUserStore()
     else {
       router.push("/game")
     }
+  }
+
+  function IrARanking(){
+    router.push('/ranking')
   }
 </script>
 

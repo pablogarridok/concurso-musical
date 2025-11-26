@@ -1,25 +1,23 @@
 <template>
   <div v-if="respuestasActuales.length > 0" id="opciones">
-  <label
-    v-for="(r, index) in respuestasActuales"
-    :key="index"
-    :class="{
-      'correcta': respuestaComprobada && r === preguntasStore.canciones[preguntasStore.indice].correcta,
-      'incorrecta': respuestaComprobada && r === respuestaSeleccionada && r !== preguntasStore.canciones[preguntasStore.indice].correcta
-    }"
-  >
-    <input
-      type="radio"
-      :value="r"
-      name="respuesta"
-      v-model="respuestaSeleccionada"
-      :disabled="respuestaComprobada"
-    />
-    {{ r }}
-  </label>
-</div>
-
-
+    <label
+      v-for="(r, index) in respuestasActuales"
+      :key="index"
+      :class="{
+        'correcta': respuestaComprobada && r === preguntasStore.canciones[preguntasStore.indice].correcta,
+        'incorrecta': respuestaComprobada && r === respuestaSeleccionada && r !== preguntasStore.canciones[preguntasStore.indice].correcta
+      }"
+    >
+      <input
+        type="radio"
+        :value="r"
+        name="respuesta"
+        v-model="respuestaSeleccionada"
+        :disabled="respuestaComprobada"
+      />
+      {{ r }}
+    </label>
+  </div>
 
   <div id="btn-comprobar">
     <div v-if="mensajeComprobar">
@@ -28,7 +26,6 @@
     <button @click="comprobarRespuesta" :disabled="!respuestaSeleccionada || respuestaComprobada">
       Comprobar
     </button>
-
   </div>
 
   <div id="btn-siguiente">
@@ -46,34 +43,33 @@ const preguntasStore = usePreguntasStore()
 const userStore = useUserStore()
 const router = useRouter()
 
-const respuestasActuales = ref([])
+let respuestasActuales = ref([])
 const respuestaSeleccionada = ref(null)
 const mensajeComprobar = ref(false)
 const mensaje = ref("")
 const puedeSiguiente = ref(false)
-const respuestaComprobada = ref(false)  // ← NUEVO
+const respuestaComprobada = ref(false)
 
 // --- cargar respuestas cuando cambie la canción actual ---
 function actualizarRespuestas() {
   const cancion = preguntasStore.canciones[preguntasStore.indice]
-  respuestasActuales.value = cancion?.respuestas || []
+  if (!cancion) {
+    respuestasActuales.value = []
+    return
+  }
+
+  respuestasActuales.value = [...cancion.respuestas].sort(() => Math.random() - 0.5)
   respuestaSeleccionada.value = null
   mensajeComprobar.value = false
   puedeSiguiente.value = false
-  respuestaComprobada.value = false  // ← RESETEAR al cambiar pregunta
+  respuestaComprobada.value = false
 }
 
-// Observar cambios en el índice
+// Observar cambios tanto en el índice como en las canciones
 watch(
-  () => preguntasStore.indice,
-  () => actualizarRespuestas()
-)
-
-// Observar cuando se carguen las canciones
-watch(
-  () => preguntasStore.canciones.length,
-  (nuevaLongitud) => {
-    if (nuevaLongitud > 0) {
+  () => [preguntasStore.indice, preguntasStore.canciones.length],
+  () => {
+    if (preguntasStore.canciones.length > 0) {
       actualizarRespuestas()
     }
   },
@@ -84,27 +80,25 @@ watch(
 function comprobarRespuesta() {
   const cancion = preguntasStore.canciones[preguntasStore.indice]
 
-
-
-  respuestaComprobada.value = true  // ← MARCAR COMO COMPROBADA
+  respuestaComprobada.value = true
 
   if (respuestaSeleccionada.value === cancion.correcta) {
     mensajeComprobar.value = true
     mensaje.value = "Respuesta Correcta"
-    userStore.actualizarPuntuacion(10);
+    userStore.actualizarPuntuacion(10)
+    userStore.sumarPreguntaCorrecta()
   } else {
     mensajeComprobar.value = true
     mensaje.value = "Respuesta Incorrecta"
+    userStore.actualizarPuntuacion(-5)
   }
 
   puedeSiguiente.value = true
 }
 
-
 function siguientePregunta() {
-  if (preguntasStore.indice>=9){
-    router.push('/')
-
+  if (preguntasStore.indice >= 9) {
+    router.push('/feedback')
   }
   preguntasStore.incrementarIndice()
   preguntasStore.sonando = false
@@ -144,7 +138,7 @@ function siguientePregunta() {
 /* Respuesta correcta */
 #opciones label.correcta {
   border-color: var(--color-correct);
-  background: rgba(2, 175, 2, 0.2);
+  background: rgba(4, 167, 4, 0.637);
   color: var(--color-correct);
   font-weight: 600;
 }

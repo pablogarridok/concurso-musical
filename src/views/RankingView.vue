@@ -1,13 +1,16 @@
 <template>
-  <Navbar />
-  <router-view />
+  <div>
+    <p>KELOKE MIO</p>
+  </div>
 </template>
 
 <script setup lang="ts">
-import Navbar from './components/NavBar.vue'
+
+
+
+
 </script>
 
 <style scoped>
-
 
 </style>

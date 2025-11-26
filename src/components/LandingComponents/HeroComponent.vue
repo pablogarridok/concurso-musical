@@ -10,7 +10,7 @@
 
     <div id="buttons">
       <button @click="empezarJuego" class="btn-play">¡Jugar!</button>
-      <button class="btn-ranking">Ver Ranking</button>
+      <button @click="verRanking" class="btn-ranking">Ver Ranking</button>
     </div>
   </div>
 </template>
@@ -28,6 +28,10 @@ function empezarJuego() {
   } else {
     router.push('/game')
   }
+}
+
+function verRanking(){
+  router.push('/ranking')
 }
 </script>
 

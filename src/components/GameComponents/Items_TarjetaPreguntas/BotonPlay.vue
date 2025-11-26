@@ -10,13 +10,23 @@ import { ref } from 'vue'
 import { usePreguntasStore } from '@/stores/preguntasStore'
 import { Howl } from 'howler'
 import BarraCancion from './BarraCancion.vue'
+import { useUserStore } from '@/stores/userStore'
 
+const userStore= useUserStore()
 const preguntasStore = usePreguntasStore()
 const cancionActual = ref(null)
 const barraComp = ref(null)
 
 async function cargarCanciones() {
+  // Si el índice llegó a 10, resetear todo para empezar de nuevo
+  if (preguntasStore.indice >= 10) {
+    preguntasStore.indice = 0
+    preguntasStore.canciones = []
+    userStore.puntuacionTotal=0
+    userStore.preguntasCorrectas=0
+  }
   if (preguntasStore.canciones.length > 0) return
+
   const response = await fetch('/data/preguntas.json')
   const data = await response.json()
   preguntasStore.canciones = [...data].sort(() => Math.random() - 0.5)
@@ -31,10 +41,12 @@ function asignarCancionActual(indice) {
     html5: true,
     onload: () => {
       const duracion = sonido.duration()
-      if (!preguntasStore.inicioAleatorio) {
-        preguntasStore.inicioAleatorio = Math.random() * (duracion - 5)
+
+      if (!cancion.inicioAleatorio) {
+        cancion.inicioAleatorio = Math.random() * Math.max(0, duracion - 5)
       }
-      sonido.seek(preguntasStore.inicioAleatorio)
+
+      sonido.seek(cancion.inicioAleatorio)
       sonido.play()
 
       barraComp.value.iniciarBarra(5)
