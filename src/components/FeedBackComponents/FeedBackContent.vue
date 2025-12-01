@@ -30,10 +30,10 @@
     <div class="footer-info">
       Respondiste correctamente <b>{{ preguntasCorrectas }}</b> de <b>10</b> preguntas
     </div>
-    <div>
+    <div class="volverJugar">
       <button @click="volverAJugar">Volver a jugar</button>
     </div>
-    <div>
+    <div class="irRanking">
       <button @click="irARanking">Ver Ranking</button>
     </div>
   </div>
@@ -55,8 +55,11 @@ if (puntos < 40) {
 } else if (puntos < 70) {
   mensaje.value = 'Bueno... podría haber sido peor'
   icono.value = '😑​'
+} else if (puntos < 100) {
+  mensaje.value = '¡Bien hecho! sabes mucho sobre esto fiera!'
+  icono.value = '😊​'
 } else {
-  mensaje.value = '¡Excelente, sabes mucho sobre esto fiera!'
+  mensaje.value = '¡Excelente, es imposible hacerlo mejor!'
   icono.value = '​😁​'
 }
 
@@ -67,18 +70,18 @@ const precision = userStore.preguntasCorrectas * 10
 function guardarJugador() {
   const playerActual = {
     nombre: userStore.nombre,
-    puntuacion: userStore.puntuacionTotal
-  };
+    puntuacion: userStore.puntuacionTotal,
+  }
 
-  let ranking = JSON.parse(localStorage.getItem("ranking") || "[]");
+  let ranking = JSON.parse(localStorage.getItem('ranking') || '[]')
 
-  ranking.push(playerActual);
+  ranking.push(playerActual)
 
-  ranking.sort((a, b) => b.puntuacion - a.puntuacion);
+  ranking.sort((a, b) => b.puntuacion - a.puntuacion)
 
-  ranking = ranking.slice(0, 5);
+  ranking = ranking.slice(0, 5)
 
-  localStorage.setItem("ranking", JSON.stringify(ranking));
+  localStorage.setItem('ranking', JSON.stringify(ranking))
 }
 
 //guardar al cargar componente
@@ -90,7 +93,7 @@ function volverAJugar() {
   router.push('/game')
 }
 
-function irARanking(){
+function irARanking() {
   router.push('/ranking')
 }
 </script>
@@ -185,7 +188,6 @@ function irARanking(){
   margin-top: 8px;
 }
 
-
 .correctas h3 {
   color: #15803d;
 }
@@ -202,7 +204,7 @@ function irARanking(){
   font-size: 0.95rem;
   color: #444343;
 }
-button {
+.volverJugar button {
   margin-top: 25px;
   width: 100%;
   padding: 14px 0;
@@ -216,6 +218,19 @@ button {
   transition: 0.25s ease;
 }
 
+.irRanking button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 14px 0;
+  background: linear-gradient(135deg, #34d399, #3b82f6);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
 button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);

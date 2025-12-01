@@ -12,18 +12,18 @@ import { Howl } from 'howler'
 import BarraCancion from './BarraCancion.vue'
 import { useUserStore } from '@/stores/userStore'
 
-const userStore= useUserStore()
+const userStore = useUserStore()
 const preguntasStore = usePreguntasStore()
 const cancionActual = ref(null)
 const barraComp = ref(null)
 
 async function cargarCanciones() {
-  // Si el índice llegó a 10, resetear todo para empezar de nuevo
+  // Si el índice llega a 10 resetea todo
   if (preguntasStore.indice >= 10) {
     preguntasStore.indice = 0
     preguntasStore.canciones = []
-    userStore.puntuacionTotal=0
-    userStore.preguntasCorrectas=0
+    userStore.puntuacionTotal = 0
+    userStore.preguntasCorrectas = 0
   }
   if (preguntasStore.canciones.length > 0) return
 
@@ -56,7 +56,7 @@ function asignarCancionActual(indice) {
         preguntasStore.sonando = false
         cancionActual.value = null
       }, 5000)
-    }
+    },
   })
 
   cancionActual.value = sonido

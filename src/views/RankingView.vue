@@ -11,32 +11,30 @@
   <div id="ranking" v-if="rankingDiv">
     <RankingComponent />
     <!--  <button @click="borrarRanking">Borrar Ranking</button>  -->
-
-
   </div>
 </template>
 
 <script setup lang="ts">
-import RankingComponent from '@/components/RankingComponents/RankingComponent.vue';
-import { ref, onMounted } from 'vue';
+import RankingComponent from '@/components/RankingComponents/RankingComponent.vue'
+import { ref, onMounted } from 'vue'
 
-const noPuntuacionDiv = ref(true);
-const rankingDiv = ref(false);
+const noPuntuacionDiv = ref(true)
+const rankingDiv = ref(false)
 
 onMounted(() => {
-  const ranking = JSON.parse(localStorage.getItem("ranking") || "[]");
+  const ranking = JSON.parse(localStorage.getItem('ranking') || '[]')
 
   if (ranking.length === 0) {
-    noPuntuacionDiv.value = true;
-    rankingDiv.value = false;
+    noPuntuacionDiv.value = true
+    rankingDiv.value = false
   } else {
-    noPuntuacionDiv.value = false;
-    rankingDiv.value = true;
+    noPuntuacionDiv.value = false
+    rankingDiv.value = true
   }
-});
+})
 function borrarRanking() {
-  localStorage.removeItem("ranking");
-  location.reload();
+  localStorage.removeItem('ranking')
+  location.reload()
 }
 </script>
 
