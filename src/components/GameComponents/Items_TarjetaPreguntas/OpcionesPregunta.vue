@@ -110,122 +110,113 @@ function siguientePregunta() {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin: 25px 0;
+  margin: 30px 0;
 }
 
 #opciones label {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 14px 20px;
+  padding: 18px 24px;
+  background: rgba(45, 42, 65, 0.8);
+  border: 2px solid rgba(124, 92, 252, 0.3);
   border-radius: 12px;
-  border: 2px solid transparent;
   cursor: pointer;
+  transition: 0.25s ease;
   font-size: 1.1rem;
+  color: #d3cdee;
   font-weight: 500;
-  transition: all 0.3s ease;
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* Hover elegante */
 #opciones label:hover {
-  background: rgba(255, 255, 255, 0.12);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: rgba(70, 63, 109, 0.8);
+  border-color: rgba(124, 92, 252, 0.6);
 }
 
-/* Respuesta correcta */
-#opciones label.correcta {
-  border-color: var(--color-correct);
-  background: rgba(4, 167, 4, 0.637);
-  color: var(--color-correct);
-  font-weight: 600;
-}
-
-/* Respuesta incorrecta */
-#opciones label.incorrecta {
-  border-color: var(--color-wrong);
-  background: rgba(255, 0, 0, 0.2);
-  color: var(--color-wrong);
-  font-weight: 600;
-}
-
-/* Input radio estilizado */
-#opciones input[type="radio"] {
-  accent-color: var(--color-accent);
+#opciones label input[type="radio"] {
   width: 20px;
   height: 20px;
+  accent-color: #7c5cfc;
   cursor: pointer;
-  transition: 0.2s;
 }
 
-/* Opciones deshabilitadas */
-#opciones input[type="radio"]:disabled + span,
-#opciones label:has(input:disabled) {
-  opacity: 0.6;
-  cursor: not-allowed;
+#opciones label.correcta {
+  background: rgba(34, 197, 94, 0.25);
+  border-color: #22c55e;
+  color: #86efac;
+  font-weight: 700;
 }
-/* Botón Comprobar */
-#btn-comprobar button {
-  padding: 12px 28px;
-  background: var(--color-accent);
-  color: white;
+
+#opciones label.incorrecta {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: #ef4444;
+  color: #fca5a5;
+  font-weight: 700;
+}
+
+
+
+#btn-comprobar {
+  margin-top: 25px;
+  text-align: center;
+}
+
+#btn-comprobar p {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 15px;
   font-weight: 600;
-  font-size: 1.1rem;
+}
+
+#btn-comprobar button {
+  padding: 14px 40px;
+  background: #7c5cfc;
+  color: #fff;
   border: none;
   border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: 0.25s ease;
 }
 
 #btn-comprobar button:hover:not(:disabled) {
-  background: var(--color-accent-light);
+  background: #6a4af4;
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-}
-
-#btn-comprobar button:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(124, 92, 252, 0.5);
 }
 
 #btn-comprobar button:disabled {
-  background: #555;
+  background: rgba(124, 92, 252, 0.3);
   cursor: not-allowed;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
-/* Botón Siguiente */
+#btn-siguiente {
+  margin-top: 25px;
+}
+
 #btn-siguiente button {
-  padding: 12px 28px;
-  background: var(--color-accent);
-  color: white;
-  font-weight: 600;
-  font-size: 1.1rem;
+  padding: 14px 40px;
+  background: #2d2a41;
+  color: #fff;
   border: none;
   border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: 0.25s ease;
 }
 
 #btn-siguiente button:hover:not(:disabled) {
-  background: var(--color-accent-light);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-}
+  background: #463f6d;
 
-#btn-siguiente button:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(45, 42, 65, 0.6);
 }
 
 #btn-siguiente button:disabled {
-  background: #555;
+  background: rgba(45, 42, 65, 0.4);
   cursor: not-allowed;
-  opacity: 0.7;
+  opacity: 0.5;
 }
-
 </style>

@@ -17,6 +17,13 @@ watch(() => preguntasStore.indice, (nuevo) => {
 
 <style scoped>
 h3 {
-  color: var(--color-text);
+  font-size: 1.3rem;
+  color: #c8c4dd;
+  margin-bottom: 15px;
+  font-weight: 600;
+  background: rgba(124, 92, 252, 0.15);
+  padding: 12px 24px;
+  border-radius: 10px;
+  display: inline-block;
 }
 </style>

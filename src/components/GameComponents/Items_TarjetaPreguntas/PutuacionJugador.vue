@@ -12,7 +12,16 @@ const userStore = useUserStore()
 
 <style scoped>
 h3 {
-  color: var(--color-accent-light);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  color: #c8c4dd;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+p {
+  font-size: 2rem;
+  color: #7c5cfc;
+  margin: 0;
+  font-weight: 700;
 }
 </style>

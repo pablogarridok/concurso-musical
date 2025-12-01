@@ -42,36 +42,45 @@ defineExpose({ iniciarBarra })
 #barra-div {
   display: flex;
   align-items: center;
-  gap: 10px;
-  width: 100%;
-  margin-top: 15px;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.tiempo {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--color-text-light);
-  width: 38px;
+#barra-div span {
+  font-size: 1rem;
+  color: #c8c4dd;
+  font-weight: 600;
+  min-width: 40px;
   text-align: center;
-  flex-shrink: 0;
 }
 
-.barra {
+#barra-div input[type="range"] {
   flex: 1;
-  -webkit-appearance: none;
-  height: 10px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.2);
+  height: 8px;
+  border-radius: 10px;
+  background: rgba(124, 92, 252, 0.2);
+  outline: none;
+  appearance: none;
 }
 
-.barra::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
+#barra-div input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: var(--color-accent);
-  border: 2px solid white;
+  background: #7c5cfc;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(124, 92, 252, 0.8);
 }
 
-
+#barra-div input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #7c5cfc;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 10px rgba(124, 92, 252, 0.8);
+}
 </style>

@@ -73,40 +73,25 @@ async function botonPlay() {
 
 <style scoped>
 .play-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  margin-top: 15px;
+  margin: 35px 0;
 }
 
-button {
-  padding: 14px 30px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 14px;
-  background: var(--color-accent);
+.play-container button {
+  padding: 14px 50px;
+  background: linear-gradient(135deg, #7c5cfc, #9370ff);
   color: #fff;
   border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+  box-shadow: 0 6px 25px rgba(124, 92, 252, 0.5);
+  margin-bottom: 25px;
 }
 
-button:hover:not(:disabled) {
-  background: var(--color-accent-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-button:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-button:disabled {
-  background: #555;
-  cursor: not-allowed;
-  opacity: 0.7;
+.play-container button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 35px rgba(124, 92, 252, 0.7);
 }
 </style>

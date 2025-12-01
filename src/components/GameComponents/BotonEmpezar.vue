@@ -10,42 +10,25 @@ defineEmits(['comenzarJuego'])
 
 <style scoped>
 #empezar {
-  margin-top: 55px;
-  text-align: center;
+  margin-top: 40px;
 }
 
-/* Botón estilo pro */
 #btn-empezar {
-  padding: 18px 55px;
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
-  color: white;
-
+  padding: 16px 40px;
+  background: #7c5cfc;
+  color: #fff;
   border: none;
-  border-radius: 14px;
-
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: 0.25s ease-out;
-
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-
-  text-transform: uppercase;
-
-  animation: fadeIn 0.7s ease-out, pulse 2.5s infinite ease-in-out;
+  transition: 0.25s ease;
+  box-shadow: 0 8px 25px rgba(124, 92, 252, 0.4);
 }
 
-/* Hover */
 #btn-empezar:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  background: #6a4af4;
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 12px 35px rgba(124, 92, 252, 0.6);
 }
-
-/* Click */
-#btn-empezar:active {
-  transform: scale(0.97);
-}
-
 </style>

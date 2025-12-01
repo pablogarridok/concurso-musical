@@ -22,89 +22,50 @@ import OpcionesPregunta from './Items_TarjetaPreguntas/OpcionesPregunta.vue'
 
 <style scoped>
 #puntuacion {
-  text-align: left;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-accent);
-  padding-left: 12px;
-  margin-bottom: 15px;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: rgba(34, 30, 55, 0.95);
+  padding: 20px 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(124, 92, 252, 0.5);
+  box-shadow: 0 4px 20px rgba(124, 92, 252, 0.35);
+  z-index: 100;
+  backdrop-filter: blur(10px);
 }
+
 
 .main-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  max-width: 650px;
   width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.07);
-  backdrop-filter: blur(6px);
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-h3 {
-  color: var(--color-text);
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin: 15px 0;
+  margin: 30px auto;
+  padding: 40px;
+  background: rgba(34, 30, 55, 0.9);
+  border-radius: 24px;
+  border: 1px solid rgba(124, 92, 252, 0.4);
+  box-shadow: 0 0 50px rgba(124, 92, 252, 0.3);
+  backdrop-filter: blur(15px);
+  animation: floatUp 0.9s ease forwards;
+  opacity: 0;
   text-align: center;
 }
 
-.main-section button {
-  padding: 14px 30px;
-  font-size: 1.15rem;
-  border-radius: 14px;
-  background: var(--color-accent);
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+.main-section h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-weight: 700;
 }
 
-.main-section button:hover {
-  background: var(--color-accent-light);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-}
-
-#opciones {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-}
-
-#opciones label {
-  padding: 14px 20px;
-  border-radius: 14px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-#opciones label:hover {
-  background: rgba(255,255,255,0.12);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-#opciones label.correcta {
-  border-color: var(--color-correct);
-  background: rgba(2,175,2,0.25);
-  color: var(--color-correct);
-  font-weight: 600;
-}
-
-#opciones label.incorrecta {
-  border-color: var(--color-wrong);
-  background: rgba(255,0,0,0.25);
-  color: var(--color-wrong);
-  font-weight: 600;
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 

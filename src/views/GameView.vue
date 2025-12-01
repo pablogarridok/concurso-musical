@@ -25,30 +25,23 @@ function comenzarJuego() {
 
 <style scoped>
 #saludo {
-  margin-top: 100px;
+  padding: 80px 20px;
   text-align: center;
-  animation: fadeIn 0.8s ease;
+  animation: fadeIn 0.9s ease forwards;
+  opacity: 0;
 }
 
 #tarjeta-pregunta {
-  max-width: 600px;
-  margin: 80px auto 0;
-  padding: 25px 30px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(8px);
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  animation: fadeIn 0.8s ease;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 </style>

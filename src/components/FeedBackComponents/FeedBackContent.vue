@@ -33,12 +33,15 @@
     <div>
       <button @click="volverAJugar">Volver a jugar</button>
     </div>
+    <div>
+      <button @click="irARanking">Ver Ranking</button>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useUserStore } from '../../stores/userStore'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import router from '@/router'
 
 const userStore = useUserStore()
@@ -60,8 +63,35 @@ if (puntos < 40) {
 const preguntasCorrectas = userStore.preguntasCorrectas
 const precision = userStore.preguntasCorrectas * 10
 
+//Guardar jugador en localStorage
+function guardarJugador() {
+  const playerActual = {
+    nombre: userStore.nombre,
+    puntuacion: userStore.puntuacionTotal
+  };
+
+  let ranking = JSON.parse(localStorage.getItem("ranking") || "[]");
+
+  ranking.push(playerActual);
+
+  ranking.sort((a, b) => b.puntuacion - a.puntuacion);
+
+  ranking = ranking.slice(0, 5);
+
+  localStorage.setItem("ranking", JSON.stringify(ranking));
+}
+
+//guardar al cargar componente
+onMounted(() => {
+  guardarJugador()
+})
+
 function volverAJugar() {
   router.push('/game')
+}
+
+function irARanking(){
+  router.push('/ranking')
 }
 </script>
 
