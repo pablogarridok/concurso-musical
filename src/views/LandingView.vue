@@ -20,12 +20,12 @@ import EmpezarComponent from '../components/LandingComponents/EmpezarComponent.v
 }
 
 :global(html, body) {
-  overflow-x: hidden; /* bloquea scroll horizontal */
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
 
-/* Fondo degradado moderno */
+
 :global(body) {
   background: linear-gradient(145deg, #0f0e17, #7e55dd);
 

@@ -17,7 +17,7 @@
 <script setup lang="ts"></script>
 
 <style scoped>
-/* --- Descripción --- */
+
 #descripcion p:first-child {
   font-size: 1.8rem;
   font-weight: 700;
@@ -31,7 +31,6 @@
   margin-bottom: 25px;
 }
 
-/* --- Lista de reglas --- */
 #reglas {
   margin-bottom: 25px;
 }

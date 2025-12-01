@@ -36,7 +36,7 @@ onMounted(() => {
 });
 function borrarRanking() {
   localStorage.removeItem("ranking");
-  location.reload(); // refresca la página para actualizar la vista
+  location.reload();
 }
 </script>
 

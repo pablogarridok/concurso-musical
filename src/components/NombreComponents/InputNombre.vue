@@ -2,7 +2,7 @@
   <div id="nombre">
     <label id="label-nombre" for="input-name">Nombre:</label>
     <input id="input-name" type="text" placeholder="Introduce tu nombre" v-model="inputNombre" />
-    <div id="mensaje-error" v-if="mensajeError" :style="{ color: 'red' }">
+    <div id="mensaje-error" :style="{ color: 'red' }">
       {{ mensajeError }}
     </div>
     <button id="boton-nombre" @click="comenzarJuego">Comenzar Juego</button>

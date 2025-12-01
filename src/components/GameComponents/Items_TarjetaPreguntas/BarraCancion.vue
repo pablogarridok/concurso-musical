@@ -13,7 +13,7 @@ const tiempo_actual = ref(0)
 const barra_tiempo = ref(0)
 let intervalo = null
 
-// --- función para iniciar la barra ---
+
 function iniciarBarra(duracion = 5) {
   tiempo_actual.value = 0
   barra_tiempo.value = 0

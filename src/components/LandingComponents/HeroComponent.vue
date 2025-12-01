@@ -36,7 +36,6 @@ function verRanking(){
 </script>
 
 <style scoped>
-/* Hero */
 #hero {
   margin-top: 40px;
   margin-bottom: 60px;
@@ -67,7 +66,6 @@ h1 {
   margin-bottom: 45px;
 }
 
-/* Botones */
 #buttons {
   display: flex;
   justify-content: center;

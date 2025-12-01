@@ -23,7 +23,6 @@ function empezarJuego() {
 </script>
 
 <style scoped>
-/* Caja Empezar */
 #empezar {
   max-width: 550px;
   margin: 90px auto 50px;
@@ -53,7 +52,6 @@ function empezarJuego() {
   color: #d3cdee;
 }
 
-/* Botón dentro del cuadro */
 .btn-play2 {
   margin-top: 18px;
   padding: 14px 28px;

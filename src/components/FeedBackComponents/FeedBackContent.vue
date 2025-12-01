@@ -96,7 +96,6 @@ function irARanking(){
 </script>
 
 <style scoped>
-/* ===== CONTENEDOR GENERAL ===== */
 #feedback {
   width: 95%;
   max-width: 450px;
@@ -107,7 +106,6 @@ function irARanking(){
   color: #ffffff;
 }
 
-/* ===== ICONO SUPERIOR ===== */
 .icon-section {
   margin-bottom: 20px;
 }
@@ -125,7 +123,6 @@ function irARanking(){
   margin: 0 auto;
 }
 
-/* ===== TEXTOS PRINCIPALES ===== */
 .titulo {
   font-size: 1.8rem;
   font-weight: 700;
@@ -138,7 +135,6 @@ function irARanking(){
   margin-bottom: 30px;
 }
 
-/* ===== TARJETA PUNTUACIÓN ===== */
 .card-puntuacion {
   background: linear-gradient(135deg, #f8f4ff, #fff0ff);
   padding: 25px;
@@ -163,7 +159,6 @@ function irARanking(){
   font-size: 0.9rem;
 }
 
-/* ===== METRICS (Correctas / Precisión) ===== */
 .metrics {
   display: flex;
   justify-content: space-between;
@@ -190,16 +185,15 @@ function irARanking(){
   margin-top: 8px;
 }
 
-/* Colores como en la imagen */
+
 .correctas h3 {
-  color: #15803d; /* verde */
+  color: #15803d;
 }
 
 .precision h3 {
-  color: #e58a00; /* naranja */
+  color: #e58a00;
 }
 
-/* ===== FOOTER INFO ===== */
 .footer-info {
   margin-top: 25px;
   background: #f3f3f3;
@@ -208,7 +202,6 @@ function irARanking(){
   font-size: 0.95rem;
   color: #444343;
 }
-/* ===== BOTÓN VOLVER A JUGAR ===== */
 button {
   margin-top: 25px;
   width: 100%;

@@ -17,6 +17,7 @@ import { ref } from 'vue'
 
 let mostrarSaludo = ref(true)
 let mostrarPregunta = ref(false)
+
 function comenzarJuego() {
   mostrarSaludo.value = false
   mostrarPregunta.value = true

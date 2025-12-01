@@ -50,7 +50,7 @@ const mensaje = ref("")
 const puedeSiguiente = ref(false)
 const respuestaComprobada = ref(false)
 
-// --- cargar respuestas cuando cambie la canción actual ---
+//cargar respuestas cuando cambie la canción actual
 function actualizarRespuestas() {
   const cancion = preguntasStore.canciones[preguntasStore.indice]
   if (!cancion) {
@@ -65,7 +65,7 @@ function actualizarRespuestas() {
   respuestaComprobada.value = false
 }
 
-// Observar cambios tanto en el índice como en las canciones
+// Observar cambios en el índice y  las canciones
 watch(
   () => [preguntasStore.indice, preguntasStore.canciones.length],
   () => {
@@ -76,7 +76,7 @@ watch(
   { immediate: true }
 )
 
-// --- comprobar respuesta ---
+
 function comprobarRespuesta() {
   const cancion = preguntasStore.canciones[preguntasStore.indice]
 

@@ -24,7 +24,7 @@ import InputNombre from '../components/NombreComponents/InputNombre.vue'
   padding: 20px;
 }
 
-/* --- Carta principal --- */
+
 .card {
   background: rgba(34, 30, 55, 0.85);
   border: 1px solid rgba(124, 92, 252, 0.35);
